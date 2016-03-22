@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>Hangman Game</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+<body>
+   <div class="wrapper">
+   <h1>Hangman</h1>
+
+    <p>use the alphabet below to guess the word, or click hint to get a clue. </p>
+    <p>
+      Select Category
+    </p>
+</div>
+<select id="categories-list">
+  <option value="baseball teams">Baseball Teams</option>
+  <option value="ice cream flavors">Ice Cream Flavors</option>
+  <option value="foreign cities">Foreign Cities</option>
+</select>
+<script>
+  var select = document.getElementById("category-select");
+</script>
+
+
+
+<div class="wrapper">
+    <div id="buttons">
+    </div>
+    <p id="categoryName"></p>
+    <div id="hold">
+    </div>
+     <canvas id="stickman"></canvas>
+    <p id="mylives"></p>
+    <p id="clue">Clue -</p>
+    <div class="container">
+      <button id="hint">Hint</button>
+      <button id="reset">Play again</button>
+    </div>
+</div>
+
+
+</body>
+<script src='hangman.js'></script>
+</html>
