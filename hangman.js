@@ -60,10 +60,6 @@ document.getElementById("categories-list").addEventListener("change", reload);
     init();
   }
 
-
-
-//reload ();
-
   // Select Category
   var selectCat = function () {
       selectedlist = e.options[e.selectedIndex].value;
@@ -224,22 +220,12 @@ document.getElementById("categories-list").addEventListener("change", reload);
   }
     chosenCategory = selectedlist;
     console.log("chosen category: " + chosenCategory);
-    //
-    //if(chosenCategory== "baseball teams"){
+
       word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
       console.log("word:" + word);
-    // }else if(chosenCategory== "ice cream flavors"){
-    //   word = play.categories[1][Math.floor(Math.random()* play.categories[1].length)]
-    // }else if(chosenCategory== "foreign cities"){
-    //   word = play.categories[2][Math.floor(Math.random()* play.categories[2].length)]
-    // }
-
-    //
-    //  chosenCategory = play.categories[Math.floor(Math.random() * play.categories.length)];
-    //  word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
-    word = word.replace(/\s/g, "-");
-    buttons();
-    console.log(word);
+      word = word.replace(/\s/g, "-");
+      buttons();
+      console.log(word);
 
 
 var init= function() {
@@ -254,24 +240,12 @@ var init= function() {
 }
 init()
 
-
-// if(e.options[e.selectedIndex].value ="baseball teams"){
-//     chosenCategory =0
-//     word= play.categories[chosenCategory];
-
-// }else if(e.options[e.selectedIndex].value ="ice cream flavors"){
-//     chosenCategory =1
-//     word= play.categories[chosenCategory];
-
-// }
-
-
   // Hint
 
     hint.onclick = function() {
 
       hints = {
-        "baseball teams": ["one of the only Major League Baseball team in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball (MLB) as a member club of the National League (NL) Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "Phoenix", "New York City"],
+        "baseball teams": ["one of the only Major League Baseball team in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball as a member club of the National League Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "Phoenix", "New York City"],
         "ice cream flavors": ["includes cookies", "includes a rainbow", "includes marshmallows", "includes three flavors", "includes nuts", "includes chips of chocolate", "includes a fruit", "includes a green leaf"],
         "foreign cities": ["capital of the United Arab Emirates", "the fashion capital of the world, is home to the headquaters of many high fashion brands", "is the most visited city in Spain, it is also the third most populated city in Europe.", "Netherlands capital", "Czech Republic capital"]
     };
@@ -283,14 +257,9 @@ init()
    // Reset
 
   document.getElementById('reset').onclick = function() {
-    // correct.parentNode.removeChild(correct);
-    // letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
     reload();
   }
 
-//
-
-//reload();
 }
