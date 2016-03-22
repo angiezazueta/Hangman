@@ -1,4 +1,4 @@
-//window.onload = function () {
+window.onload = function () {
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
 
@@ -42,7 +42,7 @@
 document.getElementById("categories-list").addEventListener("change", reload);
 
   function reload(){
-    result();
+
     selectCat();
     chosenCategory = selectedlist;
 
@@ -55,9 +55,11 @@ document.getElementById("categories-list").addEventListener("change", reload);
     }
 
     word = word.replace(/\s/g, "-");
-      console.log("reload runs");
-       console.log(word);
-    }
+    console.log("reload runs");
+    console.log(word);
+    result();
+  }
+
 
 
 //reload ();
@@ -284,5 +286,7 @@ if(e.options[e.selectedIndex].value ="baseball teams"){
     play();
   }
 
-//}
+//
 
+reload();
+}
