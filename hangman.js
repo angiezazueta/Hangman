@@ -47,17 +47,17 @@ document.getElementById("categories-list").addEventListener("change", reload);
     chosenCategory = selectedlist;
 
     if(chosenCategory== "baseball teams"){
-      word = play.categories[0][Math.floor(Math.random()* play.categories[0].length)]
+      word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
     }else if(chosenCategory== "ice cream flavors"){
-      word = play.categories[1][Math.floor(Math.random()* play.categories[1].length)]
+      word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
     }else if(chosenCategory== "foreign cities"){
-      word = play.categories[2][Math.floor(Math.random()* play.categories[2].length)]
+      word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
     }
 
     word = word.replace(/\s/g, "-");
     console.log("reload runs");
     console.log(word);
-    result();
+    init();
   }
 
 
@@ -69,13 +69,13 @@ document.getElementById("categories-list").addEventListener("change", reload);
       selectedlist = e.options[e.selectedIndex].value;
     if (selectedlist === "baseball teams") {
       categoryName.innerHTML = "The Chosen Category Is Baseball Teams";
-      word=play.categories[0]
+      //word=play.categories[0]
     } else if (selectedlist === "ice cream flavors") {
       categoryName.innerHTML = "The Chosen Category Is Ice Cream Flavors";
-      word=play.categories[1]
+      //word=play.categories[1]
     } else if (selectedlist === "foreign cities") {
       categoryName.innerHTML = "The Chosen Category Is Foreign Cities";
-      word=play.categories[2]
+      //word=play.categories[2]
     }
     else {categoryName.innerHTML ="this is an error";}
   }
@@ -192,13 +192,15 @@ document.getElementById("categories-list").addEventListener("change", reload);
    check = function () {
     list.onclick = function () {
       var guess = (this.innerHTML);
+      console.log (guess)
       this.setAttribute("class", "active");
       this.onclick = null;
       for (var i = 0; i < word.length; i++) {
         if (word[i] === guess) {
           guesses[i].innerHTML = guess;
           counter += 1;
-        }
+
+        }console.log (word[i], guess)
       }
       var j = (word.indexOf(guess));
       if (j === -1) {
@@ -214,79 +216,81 @@ document.getElementById("categories-list").addEventListener("change", reload);
 
   // Play
   var play =  {
-    categories : [
-        ["padres", "dodgers", "red sox", "cardinals", "marlins", "white sox", "diamond backs","yankees"],
-        ["cookies and cream", "rainbow sherbet", "rocky road", "neopolitan", "pistachio", "chocolate chip", "black cherry", "mint chocolate"],
-        ["abu dhabi", "milan", "madrid", "amsterdam", "london", "bangkok", "dubai", "barcelona"]
-    ]
+    categories : {
+        "baseball teams": ["padres", "dodgers", "red sox", "cardinals", "marlins", "white sox", "diamondbacks","yankees"],
+        "ice cream flavors": ["cookies and cream", "rainbow sherbet", "rocky road", "neopolitan", "pistachio", "chocolate chip", "black cherry", "mint chocolate"],
+        "foreign cities": ["abu dhabi", "milan", "madrid", "amsterdam", "london", "bangkok", "dubai", "barcelona"]
+    }
   }
     chosenCategory = selectedlist;
     console.log("chosen category: " + chosenCategory);
     //
-    if(chosenCategory== "baseball teams"){
-      word = play.categories[0][Math.floor(Math.random()* play.categories[0].length)]
+    //if(chosenCategory== "baseball teams"){
+      word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
       console.log("word:" + word);
-    }else if(chosenCategory== "ice cream flavors"){
-      word = play.categories[1][Math.floor(Math.random()* play.categories[1].length)]
-    }else if(chosenCategory== "foreign cities"){
-      word = play.categories[2][Math.floor(Math.random()* play.categories[2].length)]
-    }
+    // }else if(chosenCategory== "ice cream flavors"){
+    //   word = play.categories[1][Math.floor(Math.random()* play.categories[1].length)]
+    // }else if(chosenCategory== "foreign cities"){
+    //   word = play.categories[2][Math.floor(Math.random()* play.categories[2].length)]
+    // }
 
     //
-    // chosenCategory = play.categories[Math.floor(Math.random() * play.categories.length)];
-    // word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
+    //  chosenCategory = play.categories[Math.floor(Math.random() * play.categories.length)];
+    //  word = chosenCategory[Math.floor(Math.random() * chosenCategory.length)];
     word = word.replace(/\s/g, "-");
     buttons();
     console.log(word);
 
+
+var init= function() {
     guesses = [ ];
     lives = 10;
     counter = 0;
     space = 0;
     comments();
     selectCat();
-    result();
     canvas();
-
-
-
-if(e.options[e.selectedIndex].value ="baseball teams"){
-    chosenCategory =0
-    word= play.categories[chosenCategory];
-
-}else if(e.options[e.selectedIndex].value ="ice cream flavors"){
-    chosenCategory =1
-    word= play.categories[chosenCategory];
-
+    result();
 }
+init()
+
+
+// if(e.options[e.selectedIndex].value ="baseball teams"){
+//     chosenCategory =0
+//     word= play.categories[chosenCategory];
+
+// }else if(e.options[e.selectedIndex].value ="ice cream flavors"){
+//     chosenCategory =1
+//     word= play.categories[chosenCategory];
+
+// }
 
 
   // Hint
 
     hint.onclick = function() {
 
-      hints = [
-        ["San Diego", "Los Angeles", "Boston", "St. Louis", "Miami", "Chicago", "Phoenix", "New York City"],
-        ["includes cookies", "includes a rainbow", "includes marshmellows", "includes three flavors", "includes nuts", "includes chips of chocolate", "includes a fruit", "includes a green leaf"],
-        ["capital of the United Arab Emirates", "the fashion capital of the world, is home to the headquaters of many high fashion brands", "is the most visited city in Spain, it is also the third most populated city in Europe.", "Netherlands capital", "Czech Republic capital"]
-    ];
+      hints = {
+        "baseball teams": ["one of the only Major League Baseball team in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball (MLB) as a member club of the National League (NL) Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "Phoenix", "New York City"],
+        "ice cream flavors": ["includes cookies", "includes a rainbow", "includes marshmallows", "includes three flavors", "includes nuts", "includes chips of chocolate", "includes a fruit", "includes a green leaf"],
+        "foreign cities": ["capital of the United Arab Emirates", "the fashion capital of the world, is home to the headquaters of many high fashion brands", "is the most visited city in Spain, it is also the third most populated city in Europe.", "Netherlands capital", "Czech Republic capital"]
+    };
 
-    var categoryIndex = categories.indexOf(chosenCategory);
-    var hintIndex = chosenCategory.indexOf(word);
-    showClue.innerHTML = "Clue: - " +  hints [categoryIndex][hintIndex];
+    var hintIndex = play.categories[chosenCategory].indexOf(word);
+    showClue.innerHTML = "Clue: - " +  hints [chosenCategory][hintIndex];
   };
 
    // Reset
 
   document.getElementById('reset').onclick = function() {
-    correct.parentNode.removeChild(correct);
-    letters.parentNode.removeChild(letters);
+    // correct.parentNode.removeChild(correct);
+    // letters.parentNode.removeChild(letters);
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
-    play();
+    reload();
   }
 
 //
 
-reload();
+//reload();
 }
