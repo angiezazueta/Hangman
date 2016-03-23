@@ -42,7 +42,6 @@ window.onload = function () {
 document.getElementById("categories-list").addEventListener("change", reload);
 
   function reload(){
-
     selectCat();
     chosenCategory = selectedlist;
 
@@ -53,11 +52,12 @@ document.getElementById("categories-list").addEventListener("change", reload);
     }else if(chosenCategory== "foreign cities"){
       word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
     }
-
     word = word.replace(/\s/g, "-");
     console.log("reload runs");
     console.log(word);
     init();
+    letters.remove();
+    buttons();
   }
 
   // Select Category
@@ -65,13 +65,13 @@ document.getElementById("categories-list").addEventListener("change", reload);
       selectedlist = e.options[e.selectedIndex].value;
     if (selectedlist === "baseball teams") {
       categoryName.innerHTML = "The Chosen Category Is Baseball Teams";
-      //word=play.categories[0]
+
     } else if (selectedlist === "ice cream flavors") {
       categoryName.innerHTML = "The Chosen Category Is Ice Cream Flavors";
-      //word=play.categories[1]
+
     } else if (selectedlist === "foreign cities") {
       categoryName.innerHTML = "The Chosen Category Is Foreign Cities";
-      //word=play.categories[2]
+
     }
     else {categoryName.innerHTML ="this is an error";}
   }
@@ -220,12 +220,11 @@ document.getElementById("categories-list").addEventListener("change", reload);
   }
     chosenCategory = selectedlist;
     console.log("chosen category: " + chosenCategory);
-
       word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
       console.log("word:" + word);
-      word = word.replace(/\s/g, "-");
-      buttons();
-      console.log(word);
+    word = word.replace(/\s/g, "-");
+    buttons();
+    console.log(word);
 
 
 var init= function() {
@@ -245,7 +244,7 @@ init()
     hint.onclick = function() {
 
       hints = {
-        "baseball teams": ["one of the only Major League Baseball team in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball as a member club of the National League Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "Phoenix", "New York City"],
+        "baseball teams": ["one of the only Major League Baseball team in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball (MLB) as a member club of the National League (NL) Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "Phoenix", "New York City"],
         "ice cream flavors": ["includes cookies", "includes a rainbow", "includes marshmallows", "includes three flavors", "includes nuts", "includes chips of chocolate", "includes a fruit", "includes a green leaf"],
         "foreign cities": ["capital of the United Arab Emirates", "the fashion capital of the world, is home to the headquaters of many high fashion brands", "is the most visited city in Spain, it is also the third most populated city in Europe.", "Netherlands capital", "Czech Republic capital"]
     };
@@ -255,11 +254,10 @@ init()
   };
 
    // Reset
-
   document.getElementById('reset').onclick = function() {
+
     showClue.innerHTML = "";
     context.clearRect(0, 0, 400, 400);
     reload();
   }
-
 }

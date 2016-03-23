@@ -7,6 +7,8 @@ $white: #fff;
 $base-color:$green ;
 
 
+
+
 .wrappper {
   width: 100%;
   margin: 0 auto;
@@ -152,7 +154,7 @@ button {
   border: solid 1px $white;
   text-decoration: none;
   cursor: pointer;
-  font-size: 1.2em;
+  font-size: 2em;
   padding: 18px 10px;
   width: 180px;
   margin: 10px;
@@ -177,4 +179,7 @@ button {
     font:normal 15px/22px Arial, Sans-Serif;
     color:black;
     border:1px solid #ccc;
-
+}
+#hold {
+    clear: both;
+}
