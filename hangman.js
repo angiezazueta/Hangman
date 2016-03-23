@@ -210,11 +210,11 @@ document.getElementById("categories-list").addEventListener("change", reload);
   }
 
 
-  // Play
+  // 3 categories
   var play =  {
     categories : {
         "baseball teams": ["padres", "dodgers", "red sox", "cardinals", "marlins", "white sox", "diamondbacks","yankees"],
-        "ice cream flavors": ["cookies and cream", "rainbow sherbet", "rocky road", "neopolitan", "pistachio", "chocolate chip", "black cherry", "mint chocolate"],
+        "ice cream flavors": ["cookies and cream", "rainbow sherbet", "rocky road", "neopolitan", "pistachio", "chocolate chip", "black cherry", "mint chocolate chip"],
         "foreign cities": ["abu dhabi", "milan", "madrid", "amsterdam", "london", "bangkok", "dubai", "barcelona"]
     }
   }
@@ -244,9 +244,9 @@ init()
     hint.onclick = function() {
 
       hints = {
-        "baseball teams": ["one of the only Major League Baseball team in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball (MLB) as a member club of the National League (NL) Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "Phoenix", "New York City"],
-        "ice cream flavors": ["includes cookies", "includes a rainbow", "includes marshmallows", "includes three flavors", "includes nuts", "includes chips of chocolate", "includes a fruit", "includes a green leaf"],
-        "foreign cities": ["capital of the United Arab Emirates", "the fashion capital of the world, is home to the headquaters of many high fashion brands", "is the most visited city in Spain, it is also the third most populated city in Europe.", "Netherlands capital", "Czech Republic capital"]
+        "baseball teams": ["one of the two Major League Baseball teams in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball as a member club of the National League Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "are an American professional baseball franchise based in Phoenix, Arizona.", "one of two Major League clubs based in New York"],
+        "ice cream flavors": [" based on flavoring from chocolate cookies", " contains a frozen mixture of sweetened fruit juice", "it is traditionally composed of chocolate ice cream, nuts, and marshmallows", "also known as harlequin ice cream", "it is often distinctively green in color", "includes dough in it", "name includes a color in it", " in most cases peppermint or spearmint flavoring is used"],
+        "foreign cities": ["capital of the United Arab Emirates also distinguished by a skyline of ultramodern high-rises", "the fashion capital of the world", "is the most visited city in Spain", "is the capital and most populous city of the Netherlands", "is the capital and most populous city of England and the United Kingdom", "is the capital and most populous city of Thailand", "is the most populous city in the United Arab Emirates", "the cosmopolitan capital of Spain’s Catalonia region"]
     };
 
     var hintIndex = play.categories[chosenCategory].indexOf(word);
