@@ -47,10 +47,13 @@ document.getElementById("categories-list").addEventListener("change", reload);
 
     if(chosenCategory== "baseball teams"){
       word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
+      console.log (word, word.length)
     }else if(chosenCategory== "ice cream flavors"){
       word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
+      console.log (word, word.length)
     }else if(chosenCategory== "foreign cities"){
       word = play.categories[chosenCategory][Math.floor(Math.random()* play.categories[chosenCategory].length)]
+      console.log (word, word.length)
     }
     word = word.replace(/\s/g, "-");
     console.log("reload runs");
@@ -245,12 +248,14 @@ init()
 
       hints = {
         "baseball teams": ["one of the two Major League Baseball teams in California to originate from California", "originally from Brooklyn but moved to California in 1883", "they are members of the East division of the American League", "they compete in Major League Baseball as a member club of the National League Central division. The new Busch Stadium has been their home ballpark since 2006.", " one of only two MLB franchises to have never won a division title", "play their home games at U.S. Cellular Field", "are an American professional baseball franchise based in Phoenix, Arizona.", "one of two Major League clubs based in New York"],
-        "ice cream flavors": [" based on flavoring from chocolate cookies", " contains a frozen mixture of sweetened fruit juice", "it is traditionally composed of chocolate ice cream, nuts, and marshmallows", "also known as harlequin ice cream", "it is often distinctively green in color", "includes dough in it", "name includes a color in it", " in most cases peppermint or spearmint flavoring is used"],
-        "foreign cities": ["capital of the United Arab Emirates also distinguished by a skyline of ultramodern high-rises", "the fashion capital of the world", "is the most visited city in Spain", "is the capital and most populous city of the Netherlands", "is the capital and most populous city of England and the United Kingdom", "is the capital and most populous city of Thailand", "is the most populous city in the United Arab Emirates", "the cosmopolitan capital of Spain’s Catalonia region"]
+        "ice cream flavors": ["based on flavoring from chocolate cookies", "contains a frozen mixture of sweetened fruit juice", "it is traditionally composed of chocolate ice cream, nuts, and marshmallows", "also known as harlequin ice cream", "it is often distinctively green in color", "includes dough in it", "name includes a color in it", " in most cases peppermint or spearmint flavoring is used"],
+        "foreign cities": ["capital of the United Arab Emirates also distinguished by a skyline of ultramodern high-rises", "the fashion capital of the world", "is the most visited city in Spain", "is the capital and most populous city of the Netherlands", "is the capital and most populous city of England and the United Kingdom", "is the capital and most populous city of Thailand", "is the most populous city in the United Arab Emirates", "the cosmopolitan capital of Spain's Catalonia region"]
     };
-
-    var hintIndex = play.categories[chosenCategory].indexOf(word);
+    var wordHint = word;
+     wordHint = wordHint.replace(/-/g,' ');
+    var hintIndex = play.categories[chosenCategory].indexOf(wordHint);
     showClue.innerHTML = "Clue: - " +  hints [chosenCategory][hintIndex];
+
   };
 
    // Reset

@@ -1,10 +1,4 @@
-/* Variabes */
-$orange: #ffa600;
-$green: #c1d72e;
-$blue: #82d2e5;
-$grey:#f3f3f3;
-$white: #fff;
-$base-color:$green ;
+
 
 
 
@@ -14,48 +8,6 @@ $base-color:$green ;
   margin: 0 auto;
  }
 
-/* Mixin's */
-@mixin transition {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
- }
-
-@mixin clear {&:after}
-
-{}
-
-@mixin box-size {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
- }
-
-@mixin transition {
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
- }
-
-@mixin fade {
-  -moz-transition: all 1s ease-in;
-  -moz-transition: all 0.3s ease-in-out;
-  -webkit-transition: all 0.3s ease-in-out;
- }
-
-@mixin opacity {
-  opacity: 0.4;
-  filter: alpha(opacity=40);
-  @include fade;
- }
-
-@mixin corners ($radius) {
-  -moz-border-radius: $radius;
-  -webkit-border-radius: $radius;
-  border-radius: $radius;
-  -khtml-border-radius: $radius;
- }
-
 body {
   background-image: url("http://www.militaryboyzcomedy.com/miscimages/stage.jpg");
   background-repeat: no-repeat;
@@ -63,7 +15,7 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: white;
+  color: beige;
   height: 100%;
   text-align: center;
   font-size: 14px;
@@ -150,7 +102,7 @@ p {font-size: 1.6em;}
 button {
   @include corners (5px);
   background: $base-color;
-  color: $white;
+  color: sienna;
   border: solid 1px $white;
   text-decoration: none;
   cursor: pointer;
@@ -160,6 +112,7 @@ button {
   margin: 10px;
   outline: none;
   &:hover
+
  }
 
 {}
