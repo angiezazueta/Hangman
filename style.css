@@ -1,42 +1,38 @@
 
-
-
-
-
 .wrappper {
   width: 100%;
   margin: 0 auto;
  }
 
 body {
-  background-image: url("http://www.militaryboyzcomedy.com/miscimages/stage.jpg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
-  background-size: cover;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-  color: beige;
+
+  background: url("chalkboard.jpg") no-repeat center center fixed;
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;
+                background-size: 100% 100%;
+
+  font-family: 'Fredericka the Great', cursive;;
+  color: white;
   height: 100%;
+  width: 100%;
   text-align: center;
   font-size: 14px;
  }
 
-canvas {
-  color: $white;
-  border: $white dashed 2px;
-  padding: 15px;
- }
+
 
 h1, h2, h3 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Fredericka the Great', cursive;
   font-weight: 100;
   text-transform: uppercase;
-  margin: 5px 0;
+  margin: 1px 0;
  }
 
 h1 {
   font-size: 8em;
-  font-family: 'Old Standard TT', serif;
+  font-family: 'Fredericka the Great', cursive;
   color: white
   padding: 0;
   margin: 0;
@@ -45,7 +41,7 @@ h1 {
 
 h2 {font-size: 1.6em;}
 
-p {font-size: 1.6em;}
+p {font-size: 25px;}
 
 #alphabet {
   @include clear;
@@ -55,6 +51,7 @@ p {font-size: 1.6em;}
  }
 
   #alphabet li {
+    font-size: 25px;
     float: left;
     margin: 0 10px 10px 0;
     list-style: none;
@@ -86,9 +83,7 @@ p {font-size: 1.6em;}
    }
 
 .active {
-  @include opacity;
-  cursor: default;
-  &:hover
+  opacity: 0.2;
  }
 
 {}
@@ -100,9 +95,9 @@ p {font-size: 1.6em;}
  }
 
 button {
-  @include corners (5px);
-  background: $base-color;
-  color: sienna;
+
+  background: grey;
+  color: white;
   border: solid 1px $white;
   text-decoration: none;
   cursor: pointer;
@@ -136,3 +131,4 @@ button {
 #hold {
     clear: both;
 }
+
