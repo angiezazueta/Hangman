@@ -4,7 +4,7 @@ http://angiezazueta.github.io/hangman/
 
 /*lists and explanations of the technologies used (Technologies)*/
 
-Surprise, surprise! If you couldn't tell from the title, this game is Hangman.  It's a word game.  Play.
+Surprise, surprise! If you couldn't tell from the title, this game is Hangman.  It's a guessing game. The concept is to guess all the letters in a word correctly before your hangman gets hanged. 
 
 Technologies
 HTML
