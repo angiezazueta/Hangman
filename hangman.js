@@ -1,10 +1,11 @@
+// is fired when the entire page loads, including its content (images, css, scripts, etc.)
 window.onload = function () {
 
   var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h','i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's','t', 'u', 'v', 'w', 'x', 'y', 'z'];
 
   var categories;         // Array of topics
   var chosenCategory;     // Selected category
-  var getHint ;          // Word getHint
+  var getHint ;           // Word getHint
   var word ;              // Selected word
   var guess ;             // Guess
   var guesses = [ ];      // Stored guesses
